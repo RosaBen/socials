@@ -50,10 +50,10 @@ export default function AuthForm (){
         })
       }
       />
-      {errors?.username?.type === 'required' && <span role="alert">This field is required</span>}
-      {errors?.username?.type === 'maxLength' && <span role="alert">Username cannot exceed 20 characters</span>}
-      {errors?.username?.type === 'minLength' && <span role="alert">Username must have at least 3 characters</span>}
-      {errors?.username?.type === 'pattern' && <span role="alert">Alphabetical characters only</span>}
+      {errors?.username?.type === 'required' && <span role="alert" className="form-alert">This field is required</span>}
+      {errors?.username?.type === 'maxLength' && <span role="alert" className="form-alert">Username cannot exceed 20 characters</span>}
+      {errors?.username?.type === 'minLength' && <span role="alert" className="form-alert">Username must have at least 3 characters</span>}
+      {errors?.username?.type === 'pattern' && <span role="alert" className="form-alert">Alphabetical characters only</span>}
       <label htmlFor="email">Email</label>
       <input 
       id='email'
@@ -72,7 +72,7 @@ export default function AuthForm (){
         })
       }
       />
-      {errors.email && <span role="alert">{errors.email.message}</span>}
+      {errors.email && <span role="alert" className="form-alert">{errors.email.message}</span>}
       <label htmlFor="password">Password</label>
       <input 
       type="password" 
@@ -89,7 +89,7 @@ export default function AuthForm (){
         })
       }
       />
-      {errors.password && <span role="alert">{errors.password.message}</span>}
+      {errors.password && <span role="alert" className="form-alert">{errors.password.message}</span>}
       <button type="submit">SUBMIT</button>
     </form>
   )

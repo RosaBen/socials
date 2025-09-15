@@ -4,17 +4,18 @@
     max-width: 400px;
   margin: 0 auto;
 }
-h1 {
+h2 {
   font-weight: bold;
   text-align: center;
   padding-bottom: 0.5rem;
   border-bottom: 0.2rem solid var(--border-color);
+  color: var(--color-body);
 }
 
-span {
+.form-alert {
   color: #bf1650;
 }
-span::before {
+.form-alert::before {
   display: inline;
   content: "⚠ ";
 }

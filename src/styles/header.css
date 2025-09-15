@@ -1,0 +1,34 @@
+header{
+  width: 100%;
+}
+nav{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background:var(--background-nav) ;
+}
+
+nav  h1{
+  color: var(--nav-color);
+}
+
+.links-container{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.links-container a{
+  color: var(--nav-color);
+  text-decoration: none;
+  background: var(--background-button);
+padding: .2rem .5rem;
+border-radius: 0.5rem;
+font-weight: bold;
+
+}
+
+.links-container a:hover{
+  background: var(--text-secondary);
+}

@@ -7,17 +7,18 @@
 :root {
   --color-input: #333;
   --color-button: #f8fafc;
-    --background-button: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --background-button: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
   --background-button-hover: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --background-nav : linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --text-secondary: #6b7280;
   /* --primary-color: #6366f1;
   --primary-hover: #4f46e5;
-  --secondary-color: #f8fafc;
   --accent-color: #ec4899;
   --success-color: #10b981;
   --danger-color: #ef4444;
   --warning-color: #f59e0b;
   --text-primary: #1f2937;
-  --text-secondary: #6b7280;
+  
   --border-color: #e5e7eb;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -35,7 +36,6 @@ body {
     sans-serif;
   min-height: 100vh;
   line-height: 1.6;
-  color: var(--color-body);
   background: var(--background-body);
 
 }
@@ -44,7 +44,9 @@ body.theme-light {
   --color-body: #4f6294;
   --background-body: linear-gradient(135deg, #f8fafc 0%,#6b7280 100%);
   --border-color:  #4f6294;
-
+--background-nav : linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+--nav-color: #f8fafc;
+--text-secondary: #6b7280;
   
   
 }
@@ -52,5 +54,7 @@ body.theme-light {
 body.theme-dark {
  --color-body: #f8fafc;
  --background-body: linear-gradient(135deg,  #6b7280 0%,#1f2937 100%);
+--background-nav : linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --border-color: #e5e7eb;
+  --nav-color: #f8fafc;
 }
