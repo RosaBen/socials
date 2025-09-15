@@ -1,10 +1,9 @@
-import { useState } from "react"
+import AuthForm from "../components/AuthForm";
 export default function Register(){
-const [username, setUsername]= useState('')
-const [email, setEmail]=useState('')
-const [password, setPasword]=useState('')
   return (
-    <>
-    </>
+<section>
+  <h1>Register</h1>
+  <AuthForm/>
+</section>
   )
 }
