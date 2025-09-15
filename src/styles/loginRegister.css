@@ -1,0 +1,109 @@
+/* REGISTER */
+
+.form-page-container{
+    max-width: 400px;
+  margin: 0 auto;
+}
+h1 {
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid var(--border-color);
+}
+
+span {
+  color: #bf1650;
+}
+span::before {
+  display: inline;
+  content: "⚠ ";
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 0.25rem solid var(--border-color);
+  padding: .5rem 0.2rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--color-input-td);
+}
+
+label {
+  line-height: 1;
+  text-align: left;
+  display: block;
+  margin-bottom: 0.8rem;
+  margin-top: 1.25rem;
+  color: var(--color-body);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+button[type="submit"] {
+  background: var(--background-button);
+  color: var(--color-button);
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 2.5rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background: var(--background-button-hover);
+}
+
+/* button[type="submit"]:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+} */
+
+/* input:disabled {
+  opacity: 0.4;
+} */
+
+/* input[type="button"]:hover {
+  transition: 0.3s all;
+}
+
+button[type="submit"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+} */
+
+/* .App {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+button[type="button"] {
+  display: block;
+  appearance: none;
+  background: #333;
+  color: var(--border-color);
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+} */
+
+/* hr {
+  margin-top: 30px;
+}
+
+i {
+  color: var(--border-color);
+} */
+

@@ -1,8 +1,41 @@
-import { useForm } from "react"
+import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
+
+
 export default function AuthForm (){
-  const {register, formState: { errors }} = useForm();
+  const {register,handleSubmit, formState: { errors }} = useForm();
+  const navigate = useNavigate();
+  const onSubmit = async(data) => {
+    try {
+      const response = await fetch('http://localhost:1337/api/auth/local/register',{
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      
+      if (response.ok) {
+        const result = await response.json();
+        const token = result.jwt;
+        
+        Cookies.set('token', token, { expires: 7 }); 
+        
+        console.log('Token stocké:', token);
+        navigate("/");
+      } else {
+        const error = await response.json();
+        console.error('Erreur d\'inscription:', error);
+        alert('Erreur lors de l\'inscription: ' + (error.error?.message || 'Erreur inconnue'));
+      }
+    } catch (error) {
+      console.error('Erreur réseau:', error);
+      alert('Erreur de connexion au serveur');
+    }
+  }
   return (
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="username">Username</label>
       <input 
       id='username'
@@ -17,10 +50,10 @@ export default function AuthForm (){
         })
       }
       />
-      {errors?.username?.type === 'required' && <p role="alert">This field is required</p>}
-      {errors?.username?.type === 'maxLength' && <p role="alert">Username cannot exceed 20 characters</p>}
-      {errors?.username?.type === 'minLength' && <p role="alert">Username must have at least 3 characters</p>}
-      {errors?.username?.type === 'pattern' && <p role="alert">Alphabetical characters only</p>}
+      {errors?.username?.type === 'required' && <span role="alert">This field is required</span>}
+      {errors?.username?.type === 'maxLength' && <span role="alert">Username cannot exceed 20 characters</span>}
+      {errors?.username?.type === 'minLength' && <span role="alert">Username must have at least 3 characters</span>}
+      {errors?.username?.type === 'pattern' && <span role="alert">Alphabetical characters only</span>}
       <label htmlFor="email">Email</label>
       <input 
       id='email'
@@ -39,7 +72,7 @@ export default function AuthForm (){
         })
       }
       />
-      {errors.email && <p role="alert">{errors.email.message}</p>}
+      {errors.email && <span role="alert">{errors.email.message}</span>}
       <label htmlFor="password">Password</label>
       <input 
       type="password" 
@@ -56,8 +89,8 @@ export default function AuthForm (){
         })
       }
       />
-      {errors.password && <p role="alert">{errors.password.message}</p>}
-
+      {errors.password && <span role="alert">{errors.password.message}</span>}
+      <button type="submit">SUBMIT</button>
     </form>
   )
 }
