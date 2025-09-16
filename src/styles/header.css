@@ -19,7 +19,7 @@ nav  h1{
   align-items: center;
 }
 
-.links-container a{
+.links-container a, .login-pr{
   color: var(--nav-color);
   text-decoration: none;
   background: var(--background-button);

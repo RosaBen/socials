@@ -11,6 +11,7 @@
   --background-button-hover: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --background-nav : linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --text-secondary: #6b7280;
+  --warning-color: #f59e0b;
   /* --primary-color: #6366f1;
   --primary-hover: #4f46e5;
   --accent-color: #ec4899;

@@ -1,0 +1,5 @@
+.profile-unauthorized{
+  background-color: var(--warning-color);
+  text-align: center;
+  padding: 1rem;
+}
