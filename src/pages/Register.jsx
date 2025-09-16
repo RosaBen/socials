@@ -1,9 +1,9 @@
-import AuthForm from "../components/AuthForm";
+import RegisterForm from "../components/RegisterForm";
 export default function Register(){
   return (
-<section className="form-page-container">
+<section className="register-page-container">
   <h2>Register</h2>
-  <AuthForm/>
+  <RegisterForm/>
 </section>
   )
 }

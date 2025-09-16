@@ -19,7 +19,9 @@ export default function Login (){
   }
 
   return(
-    <form onSubmit={handleSubmit}>
+    <section className="login-page-container">
+      <h2>Login</h2>
+          <form onSubmit={handleSubmit}>
       <input 
       type="email"
       placeholder="Email"
@@ -34,5 +36,6 @@ export default function Login (){
       />
       <button type="submit">Connexion</button>
     </form>
+    </section>
   )
 }

@@ -1,8 +1,17 @@
 /* REGISTER */
 
-.form-page-container{
+.register-page-container{
     max-width: 400px;
   margin: 0 auto;
+}
+
+.login-page-container{
+      max-width: 400px;
+      margin: 0 auto;
+}
+
+.login-page-container h2{
+  margin-bottom: 1rem;
 }
 h2 {
   font-weight: bold;

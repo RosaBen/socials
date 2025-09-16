@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
 
 
-export default function AuthForm (){
+export default function RegisterForm (){
   const {register,handleSubmit, formState: { errors }} = useForm();
   const navigate = useNavigate();
   const onSubmit = async(data) => {
