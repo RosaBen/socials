@@ -1,27 +1,41 @@
 import { useState, useEffect } from "react";
 import { useAuth } from '../utils/useAuth'
-import Cookies from 'js-cookie';
 
 export default function EditProfile(){
 
   const {user, editProfile} =useAuth()
-  console.log('login',editProfile)
   const [username, SetUsername]= useState('')
   const [email, setEmail]=useState('')
   const [password, setPassword]=useState('')
   const [bio, setBio]=useState('')
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState('')
 
   useEffect(()=>{
     if(user){
       SetUsername(user.username || '')
       setEmail(user.email || '')
-      setPassword(user.password || '')
       setBio(user.bio || '')
     }
   },[user])
 
+  const handleSubmit = async(e)=>{
+    e.preventDefault()
+    setLoading(true)
+    setMessage('')
+    try {
+      await editProfile(username, email, password, bio)
+      setMessage('Profile is updated!')
+      setPassword('')
+    } catch (error) {
+      setMessage('Error:'+error.message)
+    }finally{
+      setLoading(false)
+    }
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="username">
         Username
       </label>
@@ -56,7 +70,8 @@ export default function EditProfile(){
         value={bio}
         onChange={e => setBio(e.target.value)}
       ></textarea>
-      <button type="submit">Edit Profile</button>
+      {message && <p>{message}</p>}
+      <button type="submit" disabled={loading}>{loading? 'loading...':'Edit Profile'}</button>
     </form>
   )
 }
