@@ -30,7 +30,7 @@ export function AuthProvider({children}){
     Cookies.set('token', data.jwt, {expires: 3})
     setUser(data.user)
   }
-  
+
 
   const register = async(username , email , password)=>{
     const data = await api.register(username, email, password)
@@ -42,8 +42,13 @@ export function AuthProvider({children}){
     Cookies.remove('token')
     setUser(null)
   }
+
+  const getMe = async(username, email, password, bio)=>{
+    const data = await api.getMe(username, email, password, bio)
+    setUser(data.user)
+  }
   return(
-    <AuthContext.Provider value={{user, loading, login, logout, register}}>
+    <AuthContext.Provider value={{user, loading, login, logout, register, getMe}}>
       {children}
     </AuthContext.Provider>
   )

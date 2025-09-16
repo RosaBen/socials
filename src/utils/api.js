@@ -16,9 +16,16 @@ async function request (urlRequest, options = {}) {
     headers,
   });
 
-  const data = await response.json();
+  let data;
+  const contentType = response.headers.get("content-type");
+  if (contentType && contentType.includes("application/json")) {
+    data = await response.json();
+  } else {
+    data = await response.text();
+  }
+
   if (!response.ok) {
-    throw new Error(data.error?.message || 'Api error');
+    throw new Error(data?.error?.message || data?.message || 'Api error');
   }
   return data;
 }
@@ -37,4 +44,10 @@ export const api = {
     }),
 
   getMe: () => request("/users/me"),
+
+  editProfile: (username, email, password, bio, id) =>
+    request(`/users/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ username, email, password, bio }),
+    }),
 };
