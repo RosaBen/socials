@@ -1,12 +1,13 @@
-import { StrictMode } from 'react'
+
 import { createRoot } from 'react-dom/client'
+import {AuthProvider} from './context/AuthContext'
 import './styles/index.css'
-import App from './App.jsx'
+import App from './App'
 
 document.body.className = 'theme-light'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <AuthProvider>
     <App />
-  </StrictMode>
+  </AuthProvider>
 )

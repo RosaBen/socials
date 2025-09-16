@@ -32,3 +32,18 @@ font-weight: bold;
 .links-container a:hover{
   background: var(--text-secondary);
 }
+
+.logout-btn {
+  color: var(--nav-color);
+  background: var(--background-button);
+  padding: .2rem .5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.logout-btn:hover {
+  background: var(--text-secondary);
+}

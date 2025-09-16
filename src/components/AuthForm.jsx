@@ -21,8 +21,6 @@ export default function AuthForm (){
         const token = result.jwt;
         
         Cookies.set('token', token, { expires: 7 }); 
-        
-        console.log('Token stocké:', token);
         navigate("/");
       } else {
         const error = await response.json();
