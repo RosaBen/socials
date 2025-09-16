@@ -1,35 +1,19 @@
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom";
-import Cookies from 'js-cookie';
+import { useAuth } from '../utils/useAuth';
 
 
 export default function RegisterForm (){
   const {register,handleSubmit, formState: { errors }} = useForm();
   const navigate = useNavigate();
+  const { register: authRegister } = useAuth();
   const onSubmit = async(data) => {
     try {
-      const response = await fetch('http://localhost:1337/api/auth/local/register',{
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      
-      if (response.ok) {
-        const result = await response.json();
-        const token = result.jwt;
-        
-        Cookies.set('token', token, { expires: 7 }); 
-        navigate("/");
-      } else {
-        const error = await response.json();
-        console.error('Erreur d\'inscription:', error);
-        alert('Erreur lors de l\'inscription: ' + (error.error?.message || 'Erreur inconnue'));
-      }
+      await authRegister(data.username, data.email, data.password)
+      navigate('/')
     } catch (error) {
-      console.error('Erreur réseau:', error);
-      alert('Erreur de connexion au serveur');
+      console.error('register error', error)
+      alert('information not regisered:' + error.message)
     }
   }
   return (

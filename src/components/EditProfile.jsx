@@ -4,8 +4,8 @@ import Cookies from 'js-cookie';
 
 export default function EditProfile(){
 
-  const {user} =useAuth()
-  console.log('login',user)
+  const {user, editProfile} =useAuth()
+  console.log('login',editProfile)
   const [username, SetUsername]= useState('')
   const [email, setEmail]=useState('')
   const [password, setPassword]=useState('')
@@ -56,6 +56,7 @@ export default function EditProfile(){
         value={bio}
         onChange={e => setBio(e.target.value)}
       ></textarea>
+      <button type="submit">Edit Profile</button>
     </form>
   )
 }
