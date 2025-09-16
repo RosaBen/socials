@@ -10,6 +10,7 @@
   --background-button: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
   --background-button-hover: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --background-nav : linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --background-border-animated: linear-gradient(135deg,#6b7280 0%, #667eea 50%, #764ba2 100%);
   --text-secondary: #6b7280;
   --warning-color: #f59e0b;
   /* --primary-color: #6366f1;

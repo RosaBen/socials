@@ -1,8 +1,15 @@
+import ListPosts from "../components/ListPosts";
+import Hero from '../components/Hero'
+
 export default function Home(){
   return (
-    <div>
-      <h1>Bienvenue sur la page d'accueil!</h1>
-      <p>Vous avez été redirigé avec succès vers la page Home.</p>
-    </div>
+<>
+    <header>
+    <Hero/>
+    </header>
+    <section className="home-page-container">
+      <ListPosts/>
+    </section>
+</>
   )
 }

@@ -31,6 +31,7 @@ async function request (urlRequest, options = {}) {
 }
 
 export const api = {
+  // users
   register: (username, email, password) =>
     request("/auth/local/register", {
       method: "POST",
@@ -50,4 +51,8 @@ export const api = {
       method: 'PUT',
       body: JSON.stringify({ username, email, password, bio }),
     }),
+
+  // Posts
+
+  getPosts: (page = 1, pageSize = 6) => request(`/posts?pagination[page]=${page}&pagination[pageSize]=${pageSize}`)
 };

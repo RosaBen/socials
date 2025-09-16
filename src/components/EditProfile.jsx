@@ -33,7 +33,7 @@ export default function EditProfile(){
       setLoading(false)
     }
   }
-
+console.log(user)
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="username">

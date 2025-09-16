@@ -29,6 +29,7 @@ export function AuthProvider({children}){
     const data = await api.login(identifier, password)
     Cookies.set('token', data.jwt, {expires: 3})
     setUser(data.user)
+    
   }
 
 

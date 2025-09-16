@@ -7,7 +7,7 @@ import App from './App'
 document.body.className = 'theme-light'
 
 createRoot(document.getElementById('root')).render(
-  <AuthProvider>
+  <>
     <App />
-  </AuthProvider>
+  </>
 )
